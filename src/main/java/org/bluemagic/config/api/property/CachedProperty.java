@@ -13,7 +13,7 @@ public class CachedProperty extends LocatedProperty {
 		
 		StringBuilder b = new StringBuilder();
 		
-		b.append("Retrieved cached property for key: ");
+		b.append("Cached property for key: ");
 		b.append(getKey());
 		b.append(" with value: ");
 		b.append(getValue());

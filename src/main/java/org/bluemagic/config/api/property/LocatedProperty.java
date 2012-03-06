@@ -24,7 +24,7 @@ public class LocatedProperty implements MagicProperty {
 		
 		StringBuilder b = new StringBuilder();
 		
-		b.append("Located property for key: ");
+		b.append("Property for key: ");
 		b.append(key);
 		b.append(" with value: ");
 		b.append(value);

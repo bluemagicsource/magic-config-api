@@ -13,7 +13,7 @@ public class DefaultProperty extends LocatedProperty {
 		
 		StringBuilder b = new StringBuilder();
 		
-		b.append("Retrieved default property for key: ");
+		b.append("Default property for key: ");
 		b.append(getKey());
 		b.append(" with value: ");
 		b.append(getValue());
