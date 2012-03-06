@@ -8,9 +8,9 @@ package org.bluemagic.config.api;
 public interface Tag {
 
 	/**
-	 * This gets the Value of the Tag
+	 * This gets the representation of a Tag
 	 * 
-	 * @return String representation of Tag value
+	 * @return String version of the Tag
 	 */
-	public String getValue();
+	public String toString();
 }

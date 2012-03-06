@@ -3,6 +3,8 @@ package org.bluemagic.config.api;
 import java.net.URI;
 import java.util.Map;
 
+import org.bluemagic.config.api.property.MagicProperty;
+
 /**
  * The data provider is responsible for using the incoming URI and parameters
  * to resolve the requested data. Note that the parameters are optional and 
@@ -24,7 +26,5 @@ public interface Location {
      *                      of data. Note that the Map is required but it may be
      *                      empty. However, the map itself cannot be null.
      **/
-	public String locate(URI key, Map<MagicKey, Object> parameters);
-	
-	public String get(URI key, Map<MagicKey, Object> parameters);
+	public MagicProperty locate(URI key, Map<MagicKey, Object> parameters);
 }
