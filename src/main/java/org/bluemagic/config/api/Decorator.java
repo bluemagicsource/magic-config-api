@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * The URI decorator takes incoming URI(s) and produces zero, one, or
  * more "decorated" URI(s) which should not be the same as the original URI.
- * The URI(s) produced from the incoming URI(s) are the hierarchical overide
+ * The URI(s) produced from the incoming URI(s) are the hierarchical override
  * representations.
  * 
  * The order of the decorated URIs is very important because it is the order

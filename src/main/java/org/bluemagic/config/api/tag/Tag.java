@@ -1,4 +1,4 @@
-package org.bluemagic.config.api;
+package org.bluemagic.config.api.tag;
 
 /**
  * This interface encapsulates a Tag
