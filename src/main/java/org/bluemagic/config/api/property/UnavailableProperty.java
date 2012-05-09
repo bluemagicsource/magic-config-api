@@ -1,11 +1,12 @@
 package org.bluemagic.config.api.property;
 
 import java.net.URI;
+import java.util.Map.Entry;
 
 import org.bluemagic.config.api.Location;
 import org.bluemagic.config.api.exception.UnavailablePropertyException;
 
-public class UnavailableProperty implements MagicProperty {
+public class UnavailableProperty implements Entry<URI,Object> {
 
 	private URI key;
 	
@@ -22,10 +23,6 @@ public class UnavailableProperty implements MagicProperty {
 		this.reason = reason;
 	}
 
-	public Object getValue() { 
-		throw new UnavailablePropertyException(this);
-	}
-	
 	@Override
 	public String toString() {
 		
@@ -73,5 +70,13 @@ public class UnavailableProperty implements MagicProperty {
 
 	public void setUnavailableUri(URI unavailableUri) {
 		this.unavailableUri = unavailableUri;
+	}
+	
+	public Object getValue() { 
+		throw new UnavailablePropertyException(this);
+	}
+	
+	public Object setValue(Object value) {
+		throw new UnsupportedOperationException("There is no value for an Unavailable Property!");
 	}
 }

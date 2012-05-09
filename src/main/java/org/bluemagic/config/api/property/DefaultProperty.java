@@ -4,8 +4,8 @@ import java.net.URI;
 
 public class DefaultProperty extends LocatedProperty {
 
-	public DefaultProperty(URI key, Object value, Class<?> storageClass) {
-		super(key, null, value, storageClass);
+	public DefaultProperty(URI original, URI defaulted, Object value, Class<?> storageClass) {
+		super(original, defaulted, value, storageClass);
 	}
 	
 	@Override

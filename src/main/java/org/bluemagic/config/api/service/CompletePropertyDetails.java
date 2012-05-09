@@ -2,15 +2,15 @@ package org.bluemagic.config.api.service;
 
 import java.net.URI;
 import java.util.Collection;
+import java.util.Map.Entry;
 
-import org.bluemagic.config.api.property.MagicProperty;
 import org.bluemagic.config.api.tag.Tag;
 
 public class CompletePropertyDetails extends PropertyDetails {
 
 	private Collection<Tag> attributes;
 	
-	public CompletePropertyDetails(MagicProperty property, 
+	public CompletePropertyDetails(Entry<URI,Object> property, 
 			                       Collection<URI> tagDetails, 
 			                       Collection<Tag> attributes) {
 		super(property, tagDetails);

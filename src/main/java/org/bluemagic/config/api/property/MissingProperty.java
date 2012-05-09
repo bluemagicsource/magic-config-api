@@ -1,49 +1,46 @@
 package org.bluemagic.config.api.property;
 
 import java.net.URI;
+import java.util.Map.Entry;
 
 import org.bluemagic.config.api.Location;
 import org.bluemagic.config.api.exception.MissingPropertyException;
 
-public class MissingProperty implements MagicProperty {
+public class MissingProperty implements Entry<URI,Object> {
 
-	private URI key;
+	private URI original;
 	
-	private URI missingUri;
+	private URI missing;
 	
 	private Class<? extends Location> locatorClass;
 	
-	public MissingProperty(URI key, URI missingUri, Class<? extends Location> locatorClass) {
-		this.key = key;
-		this.missingUri = missingUri;
+	public MissingProperty(URI original, URI missing, Class<? extends Location> locatorClass) {
+		this.original = original;
+		this.missing = missing;
 		this.locatorClass = locatorClass;
 	}
 
-	public Object getValue() { 
-		throw new MissingPropertyException(this);
-	}
-	
 	@Override
 	public String toString() {
 		
 		StringBuilder b = new StringBuilder();
 		
 		b.append("Missing property for key: ");
-		b.append(key);
+		b.append(original);
 		b.append(" at ");
-		b.append(missingUri);
+		b.append(missing);
 		b.append(" using: ");
 		b.append(locatorClass.getName());
 		
 		return b.toString();
 	}
 	
-	public URI getMissingUri() {
-		return missingUri;
+	public URI getMissing() {
+		return missing;
 	}
 
-	public void setMissingUri(URI missingUri) {
-		this.missingUri = missingUri;
+	public void setMissing(URI missing) {
+		this.missing = missing;
 	}
 
 	public Class<? extends Location> getLocatorClass() {
@@ -55,10 +52,27 @@ public class MissingProperty implements MagicProperty {
 	}
 
 	public URI getKey() {
-		return key;
+		return missing;
 	}
 
 	public void setKey(URI key) {
-		this.key = key;
+		this.missing = key;
+	}
+	
+	
+	public Object getValue() { 
+		throw new MissingPropertyException(this);
+	}
+	
+	public Object setValue(Object value) {
+		throw new UnsupportedOperationException("There is no value for a Missing Property!");
+	}
+
+	public URI getOriginal() {
+		return original;
+	}
+
+	public void setOriginal(URI original) {
+		this.original = original;
 	}
 }

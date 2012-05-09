@@ -18,5 +18,6 @@ public interface Transformer {
      * @return Object The translated data or incoming data if no translation is
      *         performed.
      **/
-    String transform(String value, Map<MagicKey, Object> parameters);
+	String transform(String value, Map<MagicKey, Object> parameters);
+    //Entry<URI,Object> transform(Entry<URI,Object> property, Map<MagicKey, Object> parameters);
 }

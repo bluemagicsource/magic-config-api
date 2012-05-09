@@ -1,20 +1,21 @@
 package org.bluemagic.config.api.property;
 
 import java.net.URI;
+import java.util.Map.Entry;
 
-public class LocatedProperty implements MagicProperty {
+public class LocatedProperty implements Entry<URI,Object> {
 
-	private URI key;
+	private URI original;
 	
-	private URI location;
+	private URI located;
 
 	private Object value;
 	
 	private Class<?> locatorClass;
 
-	public LocatedProperty(URI key, URI location, Object value, Class<?> locatorClass) {
-		this.key = key;
-		this.location = location;
+	public LocatedProperty(URI original, URI located, Object value, Class<?> locatorClass) {
+		this.original = original;
+		this.located = located;
 		this.value = value;
 		this.locatorClass = locatorClass;
 	}
@@ -25,11 +26,11 @@ public class LocatedProperty implements MagicProperty {
 		StringBuilder b = new StringBuilder();
 		
 		b.append("Property for key: ");
-		b.append(key);
+		b.append(original);
 		b.append(" with value: ");
 		b.append(value);
 		b.append(" at ");
-		b.append(location);
+		b.append(located);
 		b.append(" using: ");
 		b.append(locatorClass.getName());
 		
@@ -37,27 +38,28 @@ public class LocatedProperty implements MagicProperty {
 	}
 
 	public URI getKey() {
-		return key;
+		return located;
 	}
 
 	public void setKey(URI key) {
-		this.key = key;
+		this.located = key;
 	}
 
 	public URI getLocation() {
-		return location;
+		return located;
 	}
 
-	public void setLocation(URI location) {
-		this.location = location;
+	public void setLocation(URI located) {
+		this.located = located;
 	}
 
 	public Object getValue() {
 		return value;
 	}
 
-	public void setValue(Object value) {
-		this.value = value;
+	public Object setValue(Object value) {
+		this.value = value;		
+		return value;
 	}
 
 	public Class<?> getLocatorClass() {
@@ -66,5 +68,13 @@ public class LocatedProperty implements MagicProperty {
 
 	public void setLocatorClass(Class<?> locatorClass) {
 		this.locatorClass = locatorClass;
+	}
+
+	public URI getOriginal() {
+		return original;
+	}
+
+	public void setOriginal(URI original) {
+		this.original = original;
 	}
 }

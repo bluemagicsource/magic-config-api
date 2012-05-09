@@ -4,8 +4,8 @@ import java.net.URI;
 
 public class CachedProperty extends LocatedProperty {
 
-	public CachedProperty(URI key, Object value, Class<?> cachingClass) {
-		super(key, null, value, cachingClass);
+	public CachedProperty(URI original, URI cached, Object value, Class<?> cachingClass) {
+		super(original, cached, value, cachingClass);
 	}
 	
 	@Override
