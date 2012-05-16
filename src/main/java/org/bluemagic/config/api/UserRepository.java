@@ -6,7 +6,7 @@ import java.net.URI;
  * The repository interface has been designed to define the interaction between
  * a Blue Magic data repository and the data access layer
  **/
-public interface UserRepository extends Repository {
+public interface UserRepository {
 	
     /**
      * @param  uri - Requested uri
