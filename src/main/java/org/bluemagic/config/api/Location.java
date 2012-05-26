@@ -29,5 +29,9 @@ public interface Location {
      **/
 	public Entry<URI, Object> locate(URI key, Map<MagicKey, Object> parameters);
 	
+	/**
+	 * 
+	 * @return Encoding type required for this location
+	 */
 	public Tag.Encoding getEncoding();
 }
