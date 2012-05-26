@@ -69,6 +69,19 @@ public class TripleTag extends SingleTag {
 	}
 	
 	@Override
+	public String toString(Encoding encoding) {
+		
+		StringBuilder b = new StringBuilder();
+		b.append(encodeString(this.namespace, encoding));
+		b.append(this.nameSpacePredicateSeparator);
+		b.append(encodeString(this.predicate, encoding));
+		b.append(this.predicateValueSeparator);
+		b.append(encodeString(getValue(), encoding));
+
+		return b.toString();
+	}
+	
+	@Override
 	public int hashCode() {
 		return namespace.hashCode() + predicate.hashCode() + prefix.hashCode() + value.hashCode() + suffix.hashCode();
 	}

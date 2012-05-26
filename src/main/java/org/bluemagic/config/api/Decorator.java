@@ -19,7 +19,7 @@ public interface Decorator {
 	public enum Method { PREFIX, PLACEHOLDER, SUFFIX }
 	
 	public Method getMethod();
-
+	
     /**
      * @param  keyList  Required to have a valid list of zero, one, or more
      *               keys (a null value is invalid).
