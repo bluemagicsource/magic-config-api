@@ -19,7 +19,7 @@ public class SingleTag implements Tag {
 	public SingleTag() { }
 	
 	public SingleTag(String value) {
-		this.value = value.toLowerCase();
+		this.value = value;
 	}
 	
 	public SingleTag(String prefix, String value, String suffix) {
