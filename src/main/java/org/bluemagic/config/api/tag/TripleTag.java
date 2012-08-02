@@ -26,16 +26,6 @@ public class TripleTag extends SingleTag {
 		this.value = value;
 	}
 	
-	public TripleTag(String namespace, String predicate, String valuePrefix, String value, String valueSuffix) {
-		
-		this.namespace = namespace;
-		this.predicate = predicate;
-		
-		setPrefix(valuePrefix);
-		this.value = value;
-		setSuffix(valueSuffix);
-	}
-	
 	@Override
 	public boolean equals(Object obj) {
 	
@@ -83,7 +73,7 @@ public class TripleTag extends SingleTag {
 	
 	@Override
 	public int hashCode() {
-		return namespace.hashCode() + predicate.hashCode() + prefix.hashCode() + value.hashCode() + suffix.hashCode();
+		return namespace.hashCode() + predicate.hashCode() + value.hashCode();
 	}
 	
 	public void setPredicate(String predicate) {

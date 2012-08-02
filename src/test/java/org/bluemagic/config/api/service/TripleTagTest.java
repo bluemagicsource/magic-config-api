@@ -25,9 +25,6 @@ public class TripleTagTest {
 	
 		TripleTag tt = new TripleTag("namespace", "predicate", "value");
 		assertEquals("value", tt.getValue());
-		
-		tt = new TripleTag("namespace", "predicate", "prefix-", "value", "-suffix");
-		assertEquals("prefix-value-suffix", tt.getValue());
 	}
 	
 	@Test

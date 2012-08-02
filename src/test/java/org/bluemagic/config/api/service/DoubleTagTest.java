@@ -23,9 +23,6 @@ public class DoubleTagTest {
 		
 		DoubleTag dt = new DoubleTag("key", "value");
 		assertEquals("value", dt.getValue());
-		
-		dt = new DoubleTag("key", "prefix-", "value", "-suffix");
-		assertEquals("prefix-value-suffix", dt.getValue());
 	}
 	
 	@Test
@@ -50,8 +47,5 @@ public class DoubleTagTest {
 	public void checkToString() {
 		DoubleTag dt = new DoubleTag("key", "value");
 		assertEquals("key" + dt.getKeyValueSeparator() + "value", dt.toString());
-		
-		dt = new DoubleTag("key", "prefix-", "value", "-suffix");
-		assertEquals("key" + dt.getKeyValueSeparator() + "prefix-value-suffix", dt.toString());
 	}
 }

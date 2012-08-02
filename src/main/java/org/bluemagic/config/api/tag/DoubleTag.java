@@ -23,17 +23,6 @@ public class DoubleTag extends SingleTag {
 		this.value = value;
 	}
 	
-	public DoubleTag(String key, String valuePrefix, String value, String valueSuffix) {
-		
-		// SET THE KEY
-		this.key = key;
-		
-		// SET THE VALUE
-		setPrefix(valuePrefix);
-		this.value = value;
-		setSuffix(valueSuffix);
-	}
-	
 	@Override
 	public boolean equals(Object obj) {
 	
@@ -78,7 +67,7 @@ public class DoubleTag extends SingleTag {
 	
 	@Override
 	public int hashCode() {
-		return key.hashCode() + prefix.hashCode() + value.hashCode() + suffix.hashCode();
+		return key.hashCode() + value.hashCode();
 	}
 	
 	public void setKey(String key) {

@@ -30,77 +30,46 @@ public class SingleTagTest {
 	public void checkValue() {
 		
 		SingleTag st = new SingleTag();
-		st.setPrefix("prefix-");
 		st.setValue("value");
-		st.setSuffix("-suffix");
 		
-		assertEquals("prefix-value-suffix", st.getValue());
+		assertEquals("value", st.getValue());
 	}
 	
 	@Test
 	public void checkValueWithConstructor() {
 		
-		SingleTag st = new SingleTag("prefix-", "value", "-suffix");
+		SingleTag st = new SingleTag("value");
 		
-		assertEquals("prefix-value-suffix", st.getValue());
+		assertEquals("value", st.getValue());
 	}
 	
 	@Test
 	public void checkEquals() {
 		
-		SingleTag st1 = new SingleTag("prefix-", "value", "-suffix");
-		SingleTag st2 = new SingleTag("prefix-", "value", "-suffix");
+		SingleTag st1 = new SingleTag("value");
+		SingleTag st2 = new SingleTag("value");
 		assertEquals(st1, st2);
 		
-		st1 = new SingleTag("prefix-", "value", "-suffix");
-		st2 = new SingleTag("prefix-", "value", "-suffix");
+		st1 = new SingleTag("value");
+		st2 = new SingleTag("value");
 		assertEquals(st1, st1);
 		
-		st1 = new SingleTag("prefix-", "value", "-suffix");
-		st2 = new SingleTag("prefix-", "value", "-suffix");
+		st1 = new SingleTag("value");
+		st2 = new SingleTag("value");
 		assertTrue(st1.equals(st2));
 		
-		st1 = new SingleTag("different", "value", "-suffix");
-		st2 = new SingleTag("prefix-", "value", "-suffix");
+		st1 = new SingleTag("different");
+		st2 = new SingleTag("value");
 		assertFalse(st1.equals(st2));
 		
-		st1 = new SingleTag("different", "value", "-suffix");
-		st2 = new SingleTag("prefix-", "value", "-suffix");
+		st1 = new SingleTag("different");
+		st2 = new SingleTag("value");
 		assertFalse(st2.equals(st1));
 	}
-	
-	@Test
-	public void checkNullFixes() {
-		
-		SingleTag st = new SingleTag("value");
-		st.setPrefix(null);
-		st.setSuffix(null);
-		assertEquals("value", st.getValue());
-	}
-	
+
 	@Test
 	public void checkToString() {
 		SingleTag st = new SingleTag("value");
 		assertEquals("value", st.toString());
-	}
-	
-	@Test
-	public void checkSetValue() {
-		
-		SingleTag st = new SingleTag();
-		st.setPrefix("p-");
-		st.setSuffix("-s");
-		
-		st.setValue("p-abc");
-		assertEquals("p-abc-s", st.getValue());
-		
-		st.setValue("abc-s");
-		assertEquals("p-abc-s", st.getValue());
-		
-		st.setValue("p-abc-s");
-		assertEquals("p-abc-s", st.getValue());
-		
-		st.setValue("abc");
-		assertEquals("p-abc-s", st.getValue());
 	}
 }
