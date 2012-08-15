@@ -4,8 +4,6 @@ import java.net.URI;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.bluemagic.config.api.tag.Tag;
-
 /**
  * The data provider is responsible for using the incoming URI and parameters
  * to resolve the requested data. Note that the parameters are optional and 
@@ -33,5 +31,5 @@ public interface Location {
 	 * 
 	 * @return Encoding type required for this location
 	 */
-	public Tag.Encoding getEncoding();
+	public String getEncoding();
 }

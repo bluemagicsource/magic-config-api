@@ -5,27 +5,10 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.bluemagic.config.api.tag.SingleTag;
-import org.bluemagic.config.api.tag.Tag.Encoding;
 import org.junit.Test;
 
 public class SingleTagTest {
 
-	@Test
-	public void testUrlSafeString() throws Exception {
-		
-		SingleTag st = new SingleTag();
-		st.setValue("butters=@sucker");
-		//assertEquals("butters%3D%40sucker", st.toUrlSafeString());
-	}
-	
-	@Test
-	public void testFileSystemSafeString() throws Exception {
-		
-		SingleTag st = new SingleTag();
-		st.setValue("butters/sucker");
-		assertEquals("butterssucker", st.toString(Encoding.FILE));
-	}
-	
 	@Test
 	public void checkValue() {
 		

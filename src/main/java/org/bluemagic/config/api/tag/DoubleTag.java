@@ -54,18 +54,6 @@ public class DoubleTag extends SingleTag {
 	}
 	
 	@Override
-	public String toString(Encoding encoding) {
-		
-		StringBuilder b = new StringBuilder();
-		
-		b.append(encodeString(this.key, encoding));
-		b.append(this.keyValueSeparator);
-		b.append(encodeString(getValue(), encoding));
-		
-		return b.toString();
-	}
-	
-	@Override
 	public int hashCode() {
 		return key.hashCode() + value.hashCode();
 	}

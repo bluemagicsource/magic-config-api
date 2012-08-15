@@ -1,7 +1,5 @@
 package org.bluemagic.config.api.tag;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 
 /**
  * This class is a Java representation of a singletag, also known as a meta-tag.
@@ -36,44 +34,6 @@ public class SingleTag implements Tag {
 	@Override
 	public String toString() {
 		return getValue();
-	}
-	
-	@Override
-	public String toString(Encoding encoding) {
-		return encodeString(this.value, encoding);
-	}
-	
-	public String encodeString(String unencoded, Encoding encoding) {
-		
-		String encoded = "";
-		
-		if (encoding == Encoding.FILE) {
-			
-			String property = System.getProperty("os.name");
-			if (property.toLowerCase().startsWith("linux") || property.toLowerCase().startsWith("mac")) {
-				encoded = unencoded.replaceAll("/", "");
-				
-			} else {
-				encoded = encoded.replaceAll(":", "");
-				encoded = encoded.replaceAll("\\*", "");
-				encoded = encoded.replaceAll("\\\"", "");
-				encoded = encoded.replaceAll("<", "");
-				encoded = encoded.replaceAll(">", "");
-				encoded = encoded.replaceAll("|", "");
-				encoded = encoded.replaceAll("\\\\", "");
-				encoded = encoded.replaceAll("\\?", "");
-			}
-		} else if (encoding == Encoding.WEB) {
-			try {
-				encoded = URLEncoder.encode(unencoded, "UTF-8");
-			} catch (UnsupportedEncodingException e) {
-				e.printStackTrace();
-			}
-			
-		} else {
-			encoded = unencoded;
-		}
-		return encoded;
 	}
 	
 	@Override
