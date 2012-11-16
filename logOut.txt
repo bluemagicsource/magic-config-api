@@ -1,0 +1,59 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building magic-config-api 1.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.4.1:clean (default-clean) @ magic-config-api ---
+[INFO] Deleting /home/sly/workspace/BlueMagic/magic-config-api/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ magic-config-api ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ magic-config-api ---
+[INFO] Compiling 21 source files to /home/sly/workspace/BlueMagic/magic-config-api/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ magic-config-api ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/sly/workspace/BlueMagic/magic-config-api/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ magic-config-api ---
+[INFO] Compiling 3 source files to /home/sly/workspace/BlueMagic/magic-config-api/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.10:test (default-test) @ magic-config-api ---
+[INFO] Surefire report directory: /home/sly/workspace/BlueMagic/magic-config-api/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.bluemagic.config.api.service.SingleTagTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec
+Running org.bluemagic.config.api.service.TripleTagTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+Running org.bluemagic.config.api.service.DoubleTagTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+
+Results :
+
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-bundle-plugin:2.3.7:bundle (default-bundle) @ magic-config-api ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ magic-config-api ---
+[INFO] Installing /home/sly/workspace/BlueMagic/magic-config-api/target/magic-config-api-1.1.0-SNAPSHOT.jar to /home/sly/.m2/repository/org/bluemagic/config/api/magic-config-api/1.1.0-SNAPSHOT/magic-config-api-1.1.0-SNAPSHOT.jar
+[INFO] Installing /home/sly/workspace/BlueMagic/magic-config-api/pom.xml to /home/sly/.m2/repository/org/bluemagic/config/api/magic-config-api/1.1.0-SNAPSHOT/magic-config-api-1.1.0-SNAPSHOT.pom
+[INFO] 
+[INFO] --- maven-bundle-plugin:2.3.7:install (default-install) @ magic-config-api ---
+[INFO] Installing org/bluemagic/config/api/magic-config-api/1.1.0-SNAPSHOT/magic-config-api-1.1.0-SNAPSHOT.jar
+[INFO] Writing OBR metadata
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.663s
+[INFO] Finished at: Fri Nov 16 00:14:44 EST 2012
+[INFO] Final Memory: 14M/217M
+[INFO] ------------------------------------------------------------------------
