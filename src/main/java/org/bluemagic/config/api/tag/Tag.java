@@ -7,6 +7,14 @@ package org.bluemagic.config.api.tag;
  */
 public interface Tag {
 	
+	public enum Visibility { PUBLIC,PRIVATE };
+	
+	public enum Obligation { MANDATORY,OPTIONAL };
+	
+	public Visibility getVisibility();
+	
+	public Obligation getObligation();
+	
 	/**
 	 * This gets the representation of a Tag
 	 * 

@@ -10,6 +10,10 @@ public class SingleTag implements Tag {
 	
 	protected String value = "";
 	
+	private Visibility visibility = Tag.Visibility.PUBLIC;
+	
+	private Obligation obligation = Tag.Obligation.MANDATORY;
+	
 	public SingleTag() { }
 	
 	public SingleTag(String value) {
@@ -47,5 +51,23 @@ public class SingleTag implements Tag {
 
 	public String getValue() {
 		return value;
+	}
+
+	@Override
+	public Obligation getObligation() {
+		return obligation;
+	}
+
+	public void setObligation(Obligation obligation) {
+		this.obligation = obligation;
+	}
+
+	@Override
+	public Visibility getVisibility() {
+		return visibility;
+	}
+
+	public void setVisibility(Visibility visibility) {
+		this.visibility = visibility;
 	}
 }
